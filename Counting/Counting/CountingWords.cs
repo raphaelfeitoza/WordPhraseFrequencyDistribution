@@ -10,7 +10,7 @@ namespace Counting
             var splitedPhrases = phrases.Select(w => w.Split(' '));
 
             var words = splitedPhrases.SelectMany(w => w).ToList();
-            
+
             List<string> listFragment = ExtractFragments(splitedPhrases);
 
             words.AddRange(listFragment);
@@ -44,18 +44,15 @@ namespace Counting
         }
 
         private static Dictionary<string, int> ComputeWordPhraseFrequencyDistribution(List<string> words)
-        {
-            words.Sort();
+        {           
             var wordsCount = new Dictionary<string, int>();
-            var lastCountedWord = string.Empty;
+            
             foreach (var word in words)
             {
-                if (word == lastCountedWord)
+                if (wordsCount.ContainsKey(word))
                     wordsCount[word]++;
                 else
                     wordsCount.Add(word, 1);
-
-                lastCountedWord = word;
             }
 
             return wordsCount;
