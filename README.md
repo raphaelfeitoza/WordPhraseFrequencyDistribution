@@ -1,5 +1,4 @@
 # WordPhraseFrequencyDistribution
-###### Coding Interview 
 
 Given the subject lines "One Two Three", "Two Three Four" and "Three Four Five"  
 The word and phrase frequency distribution for the set of subject lines would be:
